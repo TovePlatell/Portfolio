@@ -119,8 +119,15 @@
 
 
     <footer id="contact-me">
-        <h2>Contact me</h2>
-        <p>toveplatell@gmail.com</p>
+       <form action="https://formsubmit.co/your@email.com" method="POST">
+
+     <input type="name" name="name" placeholder="Name" required>
+     <input type="hidden" name="_next" value="https:toveplatell.com/pages/thank-you.html">
+     <input type="email" name="email" placeholder="Email"required>
+     <input type="text" name="message" placeholder="Write your message here"required>
+
+     <button type="submit">Send</button>
+</form>
     </footer>
 
 <script src="src/app.js"></script>
