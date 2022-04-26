@@ -201,3 +201,33 @@ a{
     color:white;
 }
 
+.next-arrow{
+    height:40px;
+    border:none;
+    outline:none;
+    margin:5px;
+    padding:10px
+
+   
+}
+
+.next-arrow:hover{
+    background:coral;
+}
+
+.prev-arrow{
+    height:40px;
+    border:none;
+    outline:none; 
+    margin:5px;
+    padding:10px;
+}
+
+.prev-arrow:hover{
+    background:coral;
+}
+
+.arrow-btn{
+    display: flex;
+    justify-content: center;
+}
