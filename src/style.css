@@ -1,5 +1,7 @@
 body{
     font-family:'Poppins', 'sans-serif';
+    margin:0px;
+    padding:0px;
 }
 
 section{
@@ -14,13 +16,7 @@ section{
 
 }
 
-footer{
-    height:300px;
-    background-color: #1c1d25;
-    color:white;
-    text-align: center;
-    padding:80px;
-}
+
 
 nav{
     display:flex;
@@ -31,7 +27,7 @@ nav{
 ul{
     display:flex;
     list-style-type:none;
-    width:500px;
+    width:600px;
     justify-content: space-around;
     font-size: 20px;
     font-weight: 200;
@@ -41,9 +37,16 @@ ul.show{
     display:block;
 }
 
+
+
 li{
 
     text-decoration:none;
+
+}
+
+a:hover{
+    color:coral;
 }
 
 h1{
@@ -74,6 +77,11 @@ p{
 .hero-text{
     margin-left:80px;
     margin-bottom: 200px;
+}
+
+h2{
+    text-decoration: underline;
+    font-weight: 1;
 }
 
 .button{
@@ -121,6 +129,7 @@ p{
     flex-direction: column;
     text-align: center;
     padding:80px;
+
 }
 .headshot{
     width: 300px;
@@ -147,6 +156,41 @@ p{
 
 .hamburger{
     display:none;
+}
+
+footer{
+    height:auto;
+    background-color: #1c1d25;
+    color:white;
+    text-align: center;
+    padding-top:40px;
+  
+}
+
+.footer-content{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align:center;
+    text-transform:capitalize;
+}
+
+
+.footer-info a:hover{
+    text-decoration: center;
+    color:coral;
+}
+
+
+.footer-text{
+    font-size:10px;
+    margin-top:50px;
+}
+
+.footer-bottom{
+    text-align:center;
+    padding:20px 0;
 }
 
 @media only screen and (max-width: 1000px){
@@ -206,7 +250,10 @@ a{
     border:none;
     outline:none;
     margin:5px;
-    padding:10px
+    padding:10px;
+    background-color: Transparent;
+    font-size: 20px;
+
 
    
 }
@@ -221,6 +268,8 @@ a{
     outline:none; 
     margin:5px;
     padding:10px;
+    background-color: Transparent;
+    font-size: 20px;
 }
 
 .prev-arrow:hover{
@@ -231,3 +280,4 @@ a{
     display: flex;
     justify-content: center;
 }
+
