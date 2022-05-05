@@ -1,23 +1,25 @@
-const hamburgerButton = document.getElementById('hamburger')
-const navList = document.getElementById('nav-list')
+const hamburgerButton = document.querySelector('#hamburger')
+const navList = document.querySelector('#nav-list');
 
-function toggleButton(){
+const toggleButton = () => {
     navList.classList.toggle('show')
 }
 
 hamburgerButton.addEventListener('click', toggleButton)
 
 
-const projectContainer = document.getElementById("project-container");
+const projectContainer = document.querySelector("#project-container");
 const project =  projectContainer.getElementsByClassName("project-card");
 
-function next(){
+const next = () => {
     projectContainer.append(project[0]);
+    console.log(next)
 
 }
 
-function prev(){
+const prev = () => {
     projectContainer.prepend(project[project.length - 1]);
+    console.log(prev)
     
 }
 
