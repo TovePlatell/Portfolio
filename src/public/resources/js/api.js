@@ -19,25 +19,36 @@ window.addEventListener('load', darkMode);
 
 input.addEventListener('keydown', (event) => {
     if(event.key === 'Enter')
-    loadImage();
+    loadImages(event);
+    
 })
 
 
 class photoGallery{
     constructor(){
     this.API_KEY = '563492ad6f917000010000013f814e23972e4212a409926251033267';
-    this.containerDIv = document.querySelector('.container')
-    this.searchForm = document.querySelectorAll('.search-box');
+    this.containerDIv = document.querySelector('.gallery-container')
+    this.searchForm = document.querySelector('.header form')
+    this.loadMore = document.querySelector('.load-more')
+    this.pageIndex = 1;
+    this.searchValueGlobal = '';
     this.eventHandle();
 }
 
 eventHandle(){
     document.addEventListener('DOMContentLoaded', () => {
-        this.getImage();
+        this.getImage(1);
+    });
+    this.searchForm.addEventListener('submit', (e)=>{
+        this.getSearchedImages(e)
+    });
+    this.loadMore.addEventListener('click',(e)=>{
+        this.loadMoreImages(e);
     });
 }
- async getImage(){
-    const baseUrl = 'https://api.pexels.com/v1/curated?per_page=12';
+ async getImage(index){
+    this.loadMore.setAttribute('data-image', 'curated');
+    const baseUrl = `https://api.pexels.com/v1/curated?page=${index}&per_page=12`;
     const data = await this.fetchImages(baseUrl);
     this.GenerateHTML(data.photos)
     console.log(data)
@@ -71,6 +82,37 @@ eventHandle(){
         });
 
     }
+    async getSearchedImages(e){
+        this.loadMore.setAttribute('data-image', 'search');
+        e.preventDefault();
+        this.containerDIv.innerHTML = '';
+        const searchValue = e.target.querySelector('input').value;
+        this.searchValueGlobal = searchValue;
+        const baseURL = `https://api.pexels.com/v1/search?query=${searchValue}&page=1&per_page=12`;
+        const data = await this.fetchImages(baseURL);
+        this.GenerateHTML(data.photos);
+        e.target.reset();
+    }
+
+    async getMoreSearchedImages(index){
+        const baseURL = `https://api.pexels.com/v1/search?query=${this.searchValueGlobal}&page=${index}&per_page=12`;
+        const data = await this.fetchImages(baseURL);
+        console.log(data)
+        this.GenerateHTML(data.photos);
+    }
+
+     async loadMoreImages (e){
+    let index = ++this.pageIndex;
+    const loadMoredata = await e.target.getAttribute('data-image')
+    if(loadMoredata === 'curated'){
+    //load page 2 for curated
+    this.getImage(index)
+    }else{
+        //load page 2 for search
+        this.getMoreSearchedImages(index);
+    }
+} 
+
 }
 
 

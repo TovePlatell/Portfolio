@@ -1,6 +1,7 @@
-*{
+/* *{
     padding:0;
     margin:0;
+    box-sizing: border-box;
     
 }
 body{
@@ -8,38 +9,75 @@ body{
     background-color:#1c1d25;
     color:white;
 
-}
+} */
 
-header{
-    border-bottom: 3px solid coral;
-}
+/* header{
+    border-bottom: 3px solid lightslategrey;
+} */
+/* 
+section{
+    min-height: 100vh;
+    width:100%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
 
-.container{
-    width:95%;
-    margin:auto;
-}
+} */
+
+ 
+/* .container{
+   background-color:#f8f8f8;
+   width:90%;
+   max-width:900px;
+   margin: 0 auto;
+   box-shadow: 0px 0px 30px 5px lightgray;
+
+} */
+
+
+/* .gallery-container{
+   width: 100%;
+   display:grid;
+   grid-template-columns: repeat (auto-fit, minmax(250px, 1fr));
+   margin-top:30px;
+   grid-gap: 20px;
+}   */
+
+/* .grid{
+    width:100%;
+    height:300px;
+    overflow: hidden;
+    border:2px solid coral;
+} */
+
+
+/*     
+
 
 .nav{
     display:flex;
     justify-content: space-between;
     flex-wrap: wrap;
     padding:25px 0;
+
 }
 
 .nav h2{
     font-size:2rem;
+    padding-left:10px;
+  
 }
 
 .search-box{
     position:relative;
-    width: 350px;
+    width: 250px;
 }
 .search-box input{
-    box-shadow: border-box;
-    width:100%;
+    width:80%;
     font-size:1rem;
     padding:10px;
-    border-radius: 25px;
+    background-color:transparent;
     outline:none;
 
     -webkit-transition: all 0.30s ease-in-out;
@@ -48,44 +86,44 @@ header{
     -o-transition: all 0.30s ease-in-out; 
     transition: all 0.30s ease-in-out; 
     
-    border: 1px solid lightgray;
+    border:none;
+    border-bottom: 2px solid lightslategrey
 
 }
 
 input:focus{
-    box-shadow:  0 0 5px coral;
-    border: 1px solid coral;
+    box-shadow:  0 0 5px lightslategrey;
+    border: 1px solid lightslategrey;
 }
 
 .search-box i{
 color:black;
 position: absolute;
 top:25%;
-right:4%;
+right:25%;
 transition: 1.5s;
 }
 
 .search-box i:hover{
-  color:coral;
- }
+  color: lightslategrey;
+ } */
 
- .grid{
+ /* .grid{
+     
      width:100%;
      display:flex;
      flex-wrap:wrap;
      justify-content: space-evenly;
      align-items: flex-start;
- }
+ } */
+ 
+ /* .img {
+    height:100%;
+    width:100%;
+    object-fit: cover;
 
- .img{
-     width:380px;
-     height:200px;
-     margin-top:15px;
-     background-position: 50% 50%;
-     background-size: cover;
-     border-radius: 2px;
- }
-
+ }   */
+/* 
 
  @media(max-width:768px){
      .img{
@@ -115,6 +153,6 @@ transition: 1.5s;
 
     .search-box input{
         font-size: .7rem;
-        
+
     }
- }
+ } */
