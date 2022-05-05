@@ -1,3 +1,51 @@
+class MyHeader extends HTMLElement{
+    connectedCallback(){
+        this.innerHTML = 
+    
+       ` <nav>
+            <img class="logo" src="src/images/logo-white.png" alt="tove platell logo"/>
+            <ul id="nav-list">
+                <li> <a href="#about-me">About me</li>
+                <li href="#projects"><a href="#projects">Projects</a></li>
+                <li href="#services"><a href="services.html">Services</a></li>
+                <li href="#school"><a href="schoolprojects.html">School projects</a></li>
+                <li href="#contact-me"><a href="#contact-me">Contact</a></li>
+            </ul>
+
+            <button class="hamburger" id="hamburger">
+              <i class="fa-solid fa-bars"></i>
+            </button>
+        </nav> `
+
+ 
+    }
+}
+
+customElements.define('my-header', MyHeader);
+
+class MyFooter extends HTMLElement{
+    connectedCallback(){
+        this.innerHTML = 
+`
+<footer>
+<div class="footer-content" id="footer-content">    
+
+    <p class="footer-info"><a href="mailto:toveplatell@gmail.com">Contact me</a></p>
+
+<div class="footer-bottom">
+    <p class="footer-text">copyright &copy;2020 <span>Tove Platell</span></p>
+
+ </div>
+
+</div>
+</footer> 
+`
+
+    }
+}
+
+customElements.define('my-footer', MyFooter);
+
 
 const darkMode = () => {
     const date = new Date();
@@ -11,7 +59,7 @@ const darkMode = () => {
     else{
 
         document.body.style.backgroundColor = '#1c1d25'
-        document.body.style.color = 'white';
+        document.body.style.color = 'grey';
 
     }
 }
@@ -22,6 +70,13 @@ input.addEventListener('keydown', (event) => {
     loadImages(event);
     
 })
+
+const hamburgerButton = document.querySelector('#hamburger')
+const navList = document.querySelector('#nav-list');
+
+const toggleButton = () => {
+    navList.classList.toggle('show')
+}
 
 
 class photoGallery{

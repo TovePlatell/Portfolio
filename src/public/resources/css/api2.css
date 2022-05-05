@@ -11,6 +11,53 @@ body{
 
 }
 
+.header-nav{
+    background-color:white;
+}
+
+.hero{
+    background-color:#1c1d25;
+  
+    color:white;
+    font-size: 40px;
+
+}
+
+
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    
+}
+
+ul{
+    display:flex;
+    list-style-type:none;
+    width:600px;
+    justify-content: space-around;
+    font-size: 20px;
+    font-weight: 200;
+}
+
+ul.show{
+    display:block;
+}
+
+
+
+li{
+
+    text-decoration:none;
+
+}
+
+a:hover{
+    color:coral;
+}
+
+
+
 img{
     height:100%;
     width:100%;
