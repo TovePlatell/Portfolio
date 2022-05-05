@@ -30,6 +30,7 @@ class photoGallery{
     this.containerDIv = document.querySelector('.gallery-container')
     this.searchForm = document.querySelector('.header form')
     this.loadMore = document.querySelector('.load-more')
+    this.logo = document.querySelector('logo')
     this.pageIndex = 1;
     this.searchValueGlobal = '';
     this.eventHandle();
@@ -40,12 +41,21 @@ eventHandle(){
         this.getImage(1);
     });
     this.searchForm.addEventListener('submit', (e)=>{
+        this.pageIndex = 1;
         this.getSearchedImages(e)
     });
     this.loadMore.addEventListener('click',(e)=>{
         this.loadMoreImages(e);
     });
+
+    this.logo.addEventListener('click', ()=>{
+        this.pageIndex = 1;
+        this.containerDIv.innerHTML = '';
+        this.getImage(this.pageIndex);
+    })
 }
+
+
  async getImage(index){
     this.loadMore.setAttribute('data-image', 'curated');
     const baseUrl = `https://api.pexels.com/v1/curated?page=${index}&per_page=12`;
