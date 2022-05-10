@@ -3,13 +3,29 @@ class MyHeader extends HTMLElement{
         this.innerHTML = 
     
        ` <nav>
-            <img class="logo" src="src/images/logo-white.png" alt="tove platell logo"/>
+            <img class="logo" src="images/logo-white.png" alt="tove platell logo"/>
             <ul id="nav-list">
                 <li> <a href="#about-me">About me</li>
                 <li href="#projects"><a href="#projects">Projects</a></li>
                 <li href="#services"><a href="services.html">Services</a></li>
-                <li href="#school"><a href="schoolprojects.html">School projects</a></li>
+                <li href="#school"><a href="schoolprojects">School projects</a></li>
+                <div class="dropdown">
+                <li href="#school">
+                    <a class="dropBtn" href="schoolprojects">School
+                        projects</a>
+                    <i class="fas fa-caret-down"></i></li>
+                    <div class="drop-content">
+                    <li>
+                        <a href="schoolprojects">Pexel API</a>
+                    </li>
+                    <li>
+                        <a href="schoolprojects">News API</a>
+                    </li>
+                    </div>
+            </div>
+            
                 <li href="#contact-me"><a href="#contact-me">Contact</a></li>
+                
             </ul>
 
             <button class="hamburger" id="hamburger">
