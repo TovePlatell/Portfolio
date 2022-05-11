@@ -1,67 +1,3 @@
-class MyHeader extends HTMLElement{
-    connectedCallback(){
-        this.innerHTML = 
-    
-       ` <nav>
-            <img class="logo" src="images/logo-white.png" alt="tove platell logo"/>
-            <ul id="nav-list">
-                <li> <a href="#about-me">About me</li>
-                <li href="#projects"><a href="#projects">Projects</a></li>
-                <li href="#services"><a href="services.html">Services</a></li>
-                <li href="#school"><a href="schoolprojects">School projects</a></li>
-                <div class="dropdown">
-                <li href="#school">
-                    <a class="dropBtn" href="schoolprojects">School
-                        projects</a>
-                    <i class="fas fa-caret-down"></i></li>
-                    <div class="drop-content">
-                    <li>
-                        <a href="schoolprojects">Pexel API</a>
-                    </li>
-                    <li>
-                        <a href="schoolprojects">News API</a>
-                    </li>
-                    </div>
-            </div>
-            
-                <li href="#contact-me"><a href="#contact-me">Contact</a></li>
-                
-            </ul>
-
-            <button class="hamburger" id="hamburger">
-              <i class="fa-solid fa-bars"></i>
-            </button>
-        </nav> `
-
- 
-    }
-}
-
-customElements.define('my-header', MyHeader);
-
-class MyFooter extends HTMLElement{
-    connectedCallback(){
-        this.innerHTML = 
-`
-<footer>
-<div class="footer-content" id="footer-content">    
-
-    <p class="footer-info"><a href="mailto:toveplatell@gmail.com">Contact me</a></p>
-
-<div class="footer-bottom">
-    <p class="footer-text">copyright &copy;2020 <span>Tove Platell</span></p>
-
- </div>
-
-</div>
-</footer> 
-`
-
-    }
-}
-
-customElements.define('my-footer', MyFooter);
-
 
 const darkMode = () => {
     const date = new Date();
@@ -86,6 +22,7 @@ input.addEventListener('keydown', (event) => {
     loadImages(event);
     
 })
+
 
 const hamburgerButton = document.querySelector('#hamburger')
 const navList = document.querySelector('#nav-list');
@@ -199,26 +136,4 @@ eventHandle(){
 
 const gallery = new photoGallery;
 
-
-
-// const input = document.querySelector('#input');
-// const grid = document.querySelector('.grid');
-// [0];
-
-
-// const loadImage = () => {
-//   removeImages();
- 
-//   const url = "https://api.pexels.com/v1/search?query=nature&per_page=9"
-
-//   fetch(url)
-
-
-// .then(response =>{
-   
-// })}
-
-// const removeImages = () => {
-//     grid.innerHTML = '';
-// }
 
