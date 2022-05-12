@@ -56,11 +56,11 @@ eventHandle(){
         this.loadMoreImages(e);
     });
 
-    this.logo.addEventListener('click', ()=>{
-        this.pageIndex = 1;
-        this.containerDIv.innerHTML = '';
-        this.getImage(this.pageIndex);
-    })
+    // this.logo.addEventListener('click', ()=>{
+    //     this.pageIndex = 1;
+    //     this.containerDIv.innerHTML = '';
+    //     this.getImage(this.pageIndex);
+    // })
 }
 
 

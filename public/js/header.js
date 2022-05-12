@@ -2,36 +2,30 @@ class MyHeader extends HTMLElement{
     connectedCallback(){
         this.innerHTML = 
     
-       ` <nav>
+       `  <nav>
        <a href="/"> <img class="logo" src="images/logo-white.png" alt="tove
-           platell logo" /> </a>
+  platell logo"> 
+</a>
 
-       <ul id="nav-list">
-           <li> <a href="#about-me">About me</li>
-               <li href="#projects"><a href="#projects">Projects</a></li>
-               <li href="#services"><a href="services.html">Services</a></li>
-               <div class="dropdown">
-                   <li href="#school">
-                       <a class="dropBtn" href="schoolprojects">School
-                           projects</a>
-                       <i class="fas fa-caret-down"></i></li>
-                   <div class="drop-content">
-                       <li>
-                           <a href="schoolprojects">Unsplash API</a>
-                       </li>
-                       <li>
-                           <a href="news-site">News API</a>
-                       </li>
-                   </div>
 
-               </div>
-               <li href="#contact-me"><a href="#contact-me">Contact</a></li>
-           </ul>
+<ul id="nav-list">
+   <li><a href="#about-me">About me</a></li>
+   <li><a href="#projects">About</a></li>
+   <li>
+       <a href="#">SchoolProjects &#9662;</a>
+       <ul class="dropdown">
+           <li><a href="schoolprojects">Unsplash API</a></li>
+           <li><a href="news-site">News Site API</a></li>
+           <li><a href="#">Content</a></li>
+       </ul>
+   </li>
+   <li><a href="#contact-me">Contact</a></li>
+</ul>
 
            <button class="hamburger" id="hamburger">
                <i class="fa-solid fa-bars"></i>
            </button>
-       </nav>
+</nav>
        `
 
  

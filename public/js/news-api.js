@@ -1,3 +1,5 @@
+//const { default: axios } = require("axios");
+
 
 const generalBtn = document.querySelector('#general');
 const businessBtn = document.querySelector('#business');
@@ -7,8 +9,8 @@ const entertainmentBtn = document.querySelector('#entertainment');
 const searchBtn = document.querySelector('#searchBtn');
 
 const newsQuery = document.querySelector('#newsQuery');
-const newsType = document.querySelectorAll('#newsType');
-const newsDetails = document.querySelectorAll('#newsDetails');
+const newsType = document.querySelector('#newsType');
+const newsDetails = document.querySelector('#newsDetails');
 
 //Array
 
@@ -82,6 +84,7 @@ const fetchHeadlines = async () => {
 }
 
 const fetchGeneralNews = async () => {
+    
     const response = await fetch(general_news+API_KEY)
     if (response.status >= 200 && response.status < 300) {
         const myJson = await response.json();
@@ -96,6 +99,12 @@ const fetchGeneralNews = async () => {
 
     displayNews();
 }
+
+
+
+
+
+  
 
 const fetchBusinessNews = async () => {
     const response = await fetch(business_news+API_KEY)
@@ -199,9 +208,11 @@ if(newsDataArray.length == 0 ) {
     newsDetails.innerHTML = "<h5> No news is found </h5>"
     return;
     }
+    // console.log(newsDataArray)
+   newsDataArray.articles.forEach (news => {
+       if (news?.urlToImage ){
 
-    Array.from(newsDataArray).forEach (news => {
-
+        //console.log(news)
         let date = news.publishedAt.split("T")
 
         let newsColumn = document.createElement('div');
@@ -213,9 +224,10 @@ if(newsDataArray.length == 0 ) {
         let image = document.createElement('img');
         image.setAttribute("height", "matchparent");
         image.setAttribute("width", "100%");
-        image.src="news.urlToImage";
 
- 
+        // if 
+        image.src = news.urlToImage;
+
 
         let cardBody = document.createElement('div');
         
@@ -233,7 +245,7 @@ if(newsDataArray.length == 0 ) {
         description.innerHTML = news.description;
 
         let link = document.createElement('a');
-        link.className("btn-btn-light")
+        link.className = "btn-btn-light"
         link.setAttribute("target", "_blank");
         link.href = news.url;
         link.innerHTML = "Read more";
@@ -248,11 +260,12 @@ if(newsDataArray.length == 0 ) {
         newsCard.appendChild(cardBody);
 
         newsColumn.appendChild(newsCard);
-
+console.log(newsDetails)
         newsDetails.appendChild(newsColumn);
 
-
+       }
     })
 
 }
 
+//# sourceMappingURL=script.min.js.map

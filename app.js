@@ -17,7 +17,7 @@ app.set('views', './views')
 app.set('view engine', 'ejs');
 
 //templating
-app.get('', (request, response) => {
+app.get('/', (request, response) => {
     response.render('index');
     
 })

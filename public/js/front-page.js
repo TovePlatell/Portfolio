@@ -2,25 +2,27 @@
 const hamburgerButton = document.querySelector('#hamburger')
 const navList = document.querySelector('#nav-list');
 
+let index = 1;
+
 const toggleButton = () => {
     navList.classList.toggle('show')
 }
 
 hamburgerButton.addEventListener('click', toggleButton)
 
-
+//slide
 const projectContainer = document.querySelector("#project-container");
 const project =  projectContainer.getElementsByClassName("project-card");
 
+
 const next = () => {
     projectContainer.append(project[0]);
-    console.log(next)
 
 }
 
 const prev = () => {
     projectContainer.prepend(project[project.length - 1]);
-    console.log(prev)
+   
     
 }
 
